@@ -2,25 +2,26 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
-        // If no arguments are provided
+        // Default case
         if (args.length == 0) {
             System.out.println("Hello, World!");
             return;
         }
 
-        // Build comma-separated names using StringBuilder
+        // Build string with delimiter after every name
         StringBuilder nameBuilder = new StringBuilder();
-        boolean first = true;
 
         for (String name : args) {
-            if (!first) {
-                nameBuilder.append(", ");
-            }
-            nameBuilder.append(name);
-            first = false;
+            nameBuilder.append(name).append(", ");
         }
 
-        // Print final greeting
-        System.out.println("Hello, " + nameBuilder.toString() + "!");
+        // Remove trailing ", "
+        String names = "";
+        if (nameBuilder.length() > 0) {
+            names = nameBuilder.substring(0, nameBuilder.length() - 2);
+        }
+
+        // Final output
+        System.out.println("Hello, " + names + "!");
     }
 }
