@@ -2,23 +2,14 @@ public class HelloApp {
 
     public static void main(String[] args) {
 
+        String names;
+
         // Default case
         if (args.length == 0) {
-            System.out.println("Hello, World!");
-            return;
-        }
-
-        // Build string with delimiter after every name
-        StringBuilder nameBuilder = new StringBuilder();
-
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-        }
-   
-        // Remove trailing ", "
-        String names = "";
-        if (nameBuilder.length() > 0) {
-            names = nameBuilder.substring(0, nameBuilder.length() - 2);
+            names = "World";
+        } else {
+            // Join all names with ", "
+            names = String.join(", ", args);
         }
 
         // Final output
