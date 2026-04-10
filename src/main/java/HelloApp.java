@@ -14,7 +14,7 @@ public class HelloApp {
         for (String name : args) {
             nameBuilder.append(name).append(", ");
         }
-
+   
         // Remove trailing ", "
         String names = "";
         if (nameBuilder.length() > 0) {
